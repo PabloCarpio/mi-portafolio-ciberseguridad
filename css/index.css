@@ -1,0 +1,315 @@
+/* VARIABLES: Paleta Blue Sentinel (Madurez + Seguridad) */
+:root {
+    --bg-dark: #0d1117;       /* Fondo profundo */
+    --panel-dark: #161b22;    /* Fondo de secciones */
+    --accent-blue: #58a6ff;   /* Azul eléctrico interactivo */
+    --security-green: #238636;/* Verde de estado 'Seguro' */
+    --text-main: #c9d1d9;     /* Gris claro legible */
+    --border-color: #30363d;  /* Bordes sutiles */
+}
+
+/* 1. CONFIGURACIÓN GENERAL */
+body {
+    font-family: 'Cascadia Code', 'Segoe UI Mono', monospace; /* Fuente tipo terminal */
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 2. ENCABEZADO (HEADER) */
+header {
+    width: 100%;
+    background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 2px solid var(--security-green); /* Parte 2: Borde obligatorio [cite: 31] */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: var(--accent-blue);
+    text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
+    margin: 0;
+}
+
+/* Estilo para la foto de perfil */
+.profile-img {
+    max-width: 140px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-blue);
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    filter: grayscale(30%);
+}
+
+.profile-img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 15px var(--accent-blue);
+}
+
+/* 3. CONTENEDOR PRINCIPAL */
+.container {
+    max-width: 900px;
+    width: 90%;
+    margin: 40px 0;
+}
+
+/* 4. SECCIONES (Parte 2: Divisiones y Fondos [cite: 33, 35]) */
+section {
+    background-color: var(--panel-dark);
+    border: 1px solid var(--border-color); /* Borde de sección [cite: 32] */
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto decorativo de "acento lateral" */
+section::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--accent-blue);
+}
+
+h2 {
+    color: var(--accent-blue);
+    font-size: 1.4rem;
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+/* 5. COLUMNAS CON FLOAT (Parte 2: Actividad Obligatoria [cite: 37, 41]) */
+
+.col-texto {
+    width: 50%;
+    float: left; /* Texto a la izquierda [cite: 38] */
+}
+
+.col-media {
+    width: 50%; /* Ocupa la otra mitad */
+    float: right;
+    text-align: center;
+    box-sizing: border-box;
+}
+.col-media iframe, 
+.col-media video {
+    width: 100%; 
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.col-media img {
+    border-radius: 8px;
+    border: 1px solid var(--accent-blue);
+    max-width: 100%; /* Parte 3: Imagen con ancho controlado [cite: 46] */
+}
+
+/* 6. FORMULARIO DE CONTACTO (Parte 5 [cite: 62]) */
+form {
+    display: grid;
+    gap: 15px;
+}
+
+input, textarea {
+    background-color: #0d1117;
+    border: 1px solid var(--border-color);
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 5px rgba(88, 166, 255, 0.5);
+}
+
+input[type="submit"] {
+    background-color: var(--security-green);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s;
+    padding: 15px;
+}
+
+input[type="submit"]:hover {
+    background-color: #2ea043;
+}
+
+/* 7. FOOTER */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    color: #8b949e;
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .col-texto, .col-media {
+        width: 100%;
+        float: none;
+    }
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Centra los items */
+    gap: 30px;               /* Espacio uniforme entre enlaces */
+    list-style: none;
+    padding: 20px;
+}
+
+/* Contenedor Padre: El cerebro del orden */
+.contenedor-proyectos {
+    display: grid;
+    /* Crea columnas de mínimo 320px. Si hay espacio, pone 2 o 3 en fila automáticamente */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 25px; 
+    padding: 20px 0;
+}
+
+/* La Tarjeta: El diseño individual */
+.tarjeta-proyecto {
+    background-color: #161b22; /* Gris oscuro estilo GitHub */
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column; /* Texto arriba, imagen abajo */
+    justify-content: space-between; /* Empuja la imagen al fondo si el texto es corto */
+    transition: all 0.3s ease;
+}
+
+.tarjeta-proyecto:hover {
+    transform: translateY(-8px); /* Efecto de flotado */
+    border-color: #00ff41;        /* Tu verde neón de seguridad */
+    box-shadow: 0 10px 20px rgba(0, 255, 65, 0.1);
+}
+
+/* Ajuste de la imagen dentro de la tarjeta */
+.tarjeta-proyecto img {
+    width: 80px; 
+    height: auto;
+    margin: 20px auto 0 auto; /* Centra la imagen y le da espacio arriba */
+    display: block;
+    filter: grayscale(100%); /* Efecto visual pro: blanco y negro */
+    transition: 0.3s;
+}
+
+.tarjeta-proyecto:hover img {
+    filter: grayscale(0%); /* A color cuando pasas el mouse */
+}
+
+/* Estilo del enlace dentro del H3 */
+.enlace-proyecto {
+    color: #58a6ff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.enlace-proyecto:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor Padre: Ordena las tarjetas una debajo de otra */
+.contenedor-proyectos {
+    display: flex;
+    flex-direction: column; /* Apila las tarjetas verticalmente */
+    gap: 25px;               /* Espacio entre tarjetas */
+    padding: 20px 0;
+}
+
+/* La Tarjeta Individual: Ordena texto e imagen lado a lado */
+.tarjeta-proyecto {
+    background-color: #161b22; 
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;             /* FLEXBOX ACTIVADO */
+    flex-direction: row;       /* Texto e Imagen lado a lado (Fila) */
+    align-items: center;       /* Centra verticalmente la imagen con el texto */
+    justify-content: space-between; /* Espacio máximo entre ellos */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tarjeta-proyecto:hover {
+    transform: translateX(10px); /* Efecto sutil hacia la derecha */
+    border-color: #00ff41;        
+    box-shadow: 0 5px 15px rgba(0, 255, 65, 0.05);
+}
+
+/* Columnas internas de la tarjeta */
+.col-texto {
+    flex: 2;                   /* El texto ocupa 2 partes del ancho */
+    padding-right: 30px;        /* Espacio para que no toque la imagen */
+}
+
+.col-media {
+    flex: 1;                   /* La imagen ocupa 1 parte del ancho */
+    display: flex;
+    justify-content: center;   /* Centra la imagen en su columna */
+}
+
+/* Imagen dentro de la tarjeta */
+.tarjeta-proyecto img {
+    width: 100px;              /* Tamaño controlado */
+    height: auto;
+    border-radius: 8px;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.tarjeta-proyecto:hover img {
+    filter: grayscale(0%);
+}
+
+
+/* Alineación para Hobbies y otras secciones de dos columnas */
+.columnas-wrapper {
+    display: flex;
+    flex-direction: row;      /* Pone texto e imagen en fila */
+    align-items: center;      /* Centra la imagen verticalmente con el texto */
+    justify-content: space-between; /* Deja espacio entre ambos */
+    gap: 40px;                /* Espacio de seguridad entre texto e imagen */
+    margin-top: 20px;
+}
+
+.columnas-wrapper .col-texto {
+    flex: 2;                  /* El texto toma más espacio */
+}
+
+.columnas-wrapper .col-media {
+    flex: 1;                  /* La imagen toma menos espacio */
+    display: flex;
+    justify-content: center;  /* Centra la imagen en su columna */
+}
+
+/* Imagen de Hobbies (Sin el borde de los proyectos) */
+.columnas-wrapper img {
+    width: 100%;
+    max-width: 300px;         /* Ajusta este tamaño a tu gusto */
+    height: auto;
+    border-radius: 10px;      /* Bordes redondeados suaves, sin marco neón */
+    border: none;             /* Quitamos cualquier borde heredado */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Una sombra sutil para profundidad */
+}
