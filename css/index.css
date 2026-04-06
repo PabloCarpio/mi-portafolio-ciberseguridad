@@ -1,16 +1,23 @@
 /* VARIABLES: Paleta Blue Sentinel (Madurez + Seguridad) */
 :root {
-    --bg-dark: #0d1117;       /* Fondo profundo */
-    --panel-dark: #161b22;    /* Fondo de secciones */
-    --accent-blue: #58a6ff;   /* Azul eléctrico interactivo */
-    --security-green: #238636;/* Verde de estado 'Seguro' */
-    --text-main: #c9d1d9;     /* Gris claro legible */
-    --border-color: #30363d;  /* Bordes sutiles */
+    --bg-dark: #0d1117;
+    /* Fondo profundo */
+    --panel-dark: #161b22;
+    /* Fondo de secciones */
+    --accent-blue: #58a6ff;
+    /* Azul eléctrico interactivo */
+    --security-green: #238636;
+    /* Verde de estado 'Seguro' */
+    --text-main: #c9d1d9;
+    /* Gris claro legible */
+    --border-color: #30363d;
+    /* Bordes sutiles */
 }
 
 /* 1. CONFIGURACIÓN GENERAL */
 body {
-    font-family: 'Cascadia Code', 'Segoe UI Mono', monospace; /* Fuente tipo terminal */
+    font-family: 'Cascadia Code', 'Segoe UI Mono', monospace;
+    /* Fuente tipo terminal */
     background-color: var(--bg-dark);
     color: var(--text-main);
     margin: 0;
@@ -25,10 +32,9 @@ body {
 header {
     width: 100%;
     background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
-    padding: 40px 0;
+    padding: 40px 0 0 0; /* Quitamos el padding de abajo */
     text-align: center;
-    border-bottom: 2px solid var(--security-green); /* Parte 2: Borde obligatorio [cite: 31] */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    display: block; /* Aseguramos que no sea flex */
 }
 
 header h1 {
@@ -64,7 +70,8 @@ header h1 {
 /* 4. SECCIONES (Parte 2: Divisiones y Fondos [cite: 33, 35]) */
 section {
     background-color: var(--panel-dark);
-    border: 1px solid var(--border-color); /* Borde de sección [cite: 32] */
+    border: 1px solid var(--border-color);
+    /* Borde de sección [cite: 32] */
     border-radius: 12px;
     padding: 30px;
     margin-bottom: 25px;
@@ -95,26 +102,31 @@ h2 {
 
 .col-texto {
     width: 50%;
-    float: left; /* Texto a la izquierda [cite: 38] */
+    float: left;
+    /* Texto a la izquierda [cite: 38] */
 }
 
 .col-media {
-    width: 50%; /* Ocupa la otra mitad */
+    width: 50%;
+    /* Ocupa la otra mitad */
     float: right;
     text-align: center;
     box-sizing: border-box;
 }
-.col-media iframe, 
+
+.col-media iframe,
 .col-media video {
-    width: 100%; 
+    width: 100%;
     max-width: 100%;
     height: auto;
     border-radius: 8px;
 }
+
 .col-media img {
     border-radius: 8px;
     border: 1px solid var(--accent-blue);
-    max-width: 100%; /* Parte 3: Imagen con ancho controlado [cite: 46] */
+    max-width: 100%;
+    /* Parte 3: Imagen con ancho controlado [cite: 46] */
 }
 
 /* 6. FORMULARIO DE CONTACTO (Parte 5 [cite: 62]) */
@@ -123,7 +135,8 @@ form {
     gap: 15px;
 }
 
-input, textarea {
+input,
+textarea {
     background-color: #0d1117;
     border: 1px solid var(--border-color);
     color: white;
@@ -132,7 +145,8 @@ input, textarea {
     font-family: inherit;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
     border-color: var(--accent-blue);
     box-shadow: 0 0 5px rgba(88, 166, 255, 0.5);
@@ -164,7 +178,9 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .col-texto, .col-media {
+
+    .col-texto,
+    .col-media {
         width: 100%;
         float: none;
     }
@@ -172,8 +188,10 @@ footer {
 
 nav ul {
     display: flex;
-    justify-content: center; /* Centra los items */
-    gap: 30px;               /* Espacio uniforme entre enlaces */
+    justify-content: center;
+    /* Centra los items */
+    gap: 30px;
+    /* Espacio uniforme entre enlaces */
     list-style: none;
     padding: 20px;
 }
@@ -182,41 +200,49 @@ nav ul {
 .contenedor-proyectos {
     display: grid;
     /* Crea columnas de mínimo 320px. Si hay espacio, pone 2 o 3 en fila automáticamente */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-    gap: 25px; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
     padding: 20px 0;
 }
 
 /* La Tarjeta: El diseño individual */
 .tarjeta-proyecto {
-    background-color: #161b22; /* Gris oscuro estilo GitHub */
+    background-color: #161b22;
+    /* Gris oscuro estilo GitHub */
     border: 1px solid #30363d;
     border-radius: 12px;
     padding: 25px;
     display: flex;
-    flex-direction: column; /* Texto arriba, imagen abajo */
-    justify-content: space-between; /* Empuja la imagen al fondo si el texto es corto */
+    flex-direction: column;
+    /* Texto arriba, imagen abajo */
+    justify-content: space-between;
+    /* Empuja la imagen al fondo si el texto es corto */
     transition: all 0.3s ease;
 }
 
 .tarjeta-proyecto:hover {
-    transform: translateY(-8px); /* Efecto de flotado */
-    border-color: #00ff41;        /* Tu verde neón de seguridad */
+    transform: translateY(-8px);
+    /* Efecto de flotado */
+    border-color: #00ff41;
+    /* Tu verde neón de seguridad */
     box-shadow: 0 10px 20px rgba(0, 255, 65, 0.1);
 }
 
 /* Ajuste de la imagen dentro de la tarjeta */
 .tarjeta-proyecto img {
-    width: 80px; 
+    width: 80px;
     height: auto;
-    margin: 20px auto 0 auto; /* Centra la imagen y le da espacio arriba */
+    margin: 20px auto 0 auto;
+    /* Centra la imagen y le da espacio arriba */
     display: block;
-    filter: grayscale(100%); /* Efecto visual pro: blanco y negro */
+    filter: grayscale(100%);
+    /* Efecto visual pro: blanco y negro */
     transition: 0.3s;
 }
 
 .tarjeta-proyecto:hover img {
-    filter: grayscale(0%); /* A color cuando pasas el mouse */
+    filter: grayscale(0%);
+    /* A color cuando pasas el mouse */
 }
 
 /* Estilo del enlace dentro del H3 */
@@ -233,46 +259,58 @@ nav ul {
 /* Contenedor Padre: Ordena las tarjetas una debajo de otra */
 .contenedor-proyectos {
     display: flex;
-    flex-direction: column; /* Apila las tarjetas verticalmente */
-    gap: 25px;               /* Espacio entre tarjetas */
+    flex-direction: column;
+    /* Apila las tarjetas verticalmente */
+    gap: 25px;
+    /* Espacio entre tarjetas */
     padding: 20px 0;
 }
 
 /* La Tarjeta Individual: Ordena texto e imagen lado a lado */
 .tarjeta-proyecto {
-    background-color: #161b22; 
+    background-color: #161b22;
     border: 1px solid #30363d;
     border-radius: 12px;
     padding: 30px;
-    display: flex;             /* FLEXBOX ACTIVADO */
-    flex-direction: row;       /* Texto e Imagen lado a lado (Fila) */
-    align-items: center;       /* Centra verticalmente la imagen con el texto */
-    justify-content: space-between; /* Espacio máximo entre ellos */
+    display: flex;
+    /* FLEXBOX ACTIVADO */
+    flex-direction: row;
+    /* Texto e Imagen lado a lado (Fila) */
+    align-items: center;
+    /* Centra verticalmente la imagen con el texto */
+    justify-content: space-between;
+    /* Espacio máximo entre ellos */
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .tarjeta-proyecto:hover {
-    transform: translateX(10px); /* Efecto sutil hacia la derecha */
-    border-color: #00ff41;        
+    transform: translateX(10px);
+    /* Efecto sutil hacia la derecha */
+    border-color: #00ff41;
     box-shadow: 0 5px 15px rgba(0, 255, 65, 0.05);
 }
 
 /* Columnas internas de la tarjeta */
 .col-texto {
-    flex: 2;                   /* El texto ocupa 2 partes del ancho */
-    padding-right: 30px;        /* Espacio para que no toque la imagen */
+    flex: 2;
+    /* El texto ocupa 2 partes del ancho */
+    padding-right: 30px;
+    /* Espacio para que no toque la imagen */
 }
 
 .col-media {
-    flex: 1;                   /* La imagen ocupa 1 parte del ancho */
+    flex: 1;
+    /* La imagen ocupa 1 parte del ancho */
     display: flex;
-    justify-content: center;   /* Centra la imagen en su columna */
+    justify-content: center;
+    /* Centra la imagen en su columna */
 }
 
 /* Imagen dentro de la tarjeta */
 .tarjeta-proyecto img {
-    width: 100px;              /* Tamaño controlado */
+    width: 100px;
+    /* Tamaño controlado */
     height: auto;
     border-radius: 8px;
     filter: grayscale(100%);
@@ -287,29 +325,246 @@ nav ul {
 /* Alineación para Hobbies y otras secciones de dos columnas */
 .columnas-wrapper {
     display: flex;
-    flex-direction: row;      /* Pone texto e imagen en fila */
-    align-items: center;      /* Centra la imagen verticalmente con el texto */
-    justify-content: space-between; /* Deja espacio entre ambos */
-    gap: 40px;                /* Espacio de seguridad entre texto e imagen */
+    flex-direction: row;
+    /* Pone texto e imagen en fila */
+    align-items: center;
+    /* Centra la imagen verticalmente con el texto */
+    justify-content: space-between;
+    /* Deja espacio entre ambos */
+    gap: 40px;
+    /* Espacio de seguridad entre texto e imagen */
     margin-top: 20px;
 }
 
 .columnas-wrapper .col-texto {
-    flex: 2;                  /* El texto toma más espacio */
+    flex: 2;
+    /* El texto toma más espacio */
 }
 
 .columnas-wrapper .col-media {
-    flex: 1;                  /* La imagen toma menos espacio */
+    flex: 1;
+    /* La imagen toma menos espacio */
     display: flex;
-    justify-content: center;  /* Centra la imagen en su columna */
+    justify-content: center;
+    /* Centra la imagen en su columna */
 }
 
 /* Imagen de Hobbies (Sin el borde de los proyectos) */
 .columnas-wrapper img {
     width: 100%;
-    max-width: 300px;         /* Ajusta este tamaño a tu gusto */
+    max-width: 300px;
+    /* Ajusta este tamaño a tu gusto */
     height: auto;
-    border-radius: 10px;      /* Bordes redondeados suaves, sin marco neón */
-    border: none;             /* Quitamos cualquier borde heredado */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Una sombra sutil para profundidad */
+    border-radius: 10px;
+    /* Bordes redondeados suaves, sin marco neón */
+    border: none;
+    /* Quitamos cualquier borde heredado */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Una sombra sutil para profundidad */
+}
+
+/* Estilos para el mensaje de respuesta */
+#status-mensaje {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+    /* Se oculta por defecto */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Cuando tiene la clase exito o error, se muestra */
+.mensaje-exito,
+.mensaje-error {
+    display: block !important;
+}
+
+.mensaje-exito {
+    background-color: rgba(35, 134, 54, 0.2);
+    /* Tu verde security-green con transparencia */
+    color: var(--security-green);
+    border: 1px solid var(--security-green);
+}
+
+.mensaje-error {
+    background-color: rgba(248, 81, 73, 0.2);
+    color: #f85149;
+    border: 1px solid #f85149;
+}
+
+#status-mensaje {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+    /* Oculto hasta que se envíe */
+    text-align: center;
+    font-weight: bold;
+}
+
+.mensaje-exito {
+    display: block !important;
+    background-color: #23863633;
+    /* Verde transparente */
+    color: #238636;
+    border: 1px solid #238636;
+}
+
+.mensaje-error {
+    display: block !important;
+    background-color: #f8514933;
+    /* Rojo transparente */
+    color: #f85149;
+    border: 1px solid #f85149;
+}
+
+/* --- DISEÑO RESPONSIVE (MEDIA QUERIES) --- */
+
+/* Se activa cuando la pantalla mide 768px o menos (Tablets y Celulares) */
+@media (max-width: 768px) {
+
+    /* 1. Ajuste del Contenedor Principal */
+    .container {
+        width: 95%;
+        /* Ocupa casi toda la pantalla en móviles */
+        padding: 10px;
+    }
+
+    /* 2. Ajuste de Proyectos (De 2 columnas a 1 sola columna) */
+    .contenedor-proyectos {
+        grid-template-columns: 1fr;
+        /* Una sola columna de arriba a abajo */
+        gap: 15px;
+    }
+
+    .tarjeta-proyecto {
+        flex-direction: column;
+        /* Texto arriba e imagen abajo dentro de la tarjeta */
+        text-align: center;
+    }
+
+    /* 3. Ajuste de Hobbies/Experiencia (Flexbox) */
+    .columnas-wrapper {
+        flex-direction: column;
+        /* Apila el texto sobre la imagen */
+        text-align: center;
+        gap: 20px;
+    }
+
+    .columnas-wrapper .col-media img {
+        width: 80%;
+        /* La imagen se hace más grande para llenar el ancho móvil */
+        max-width: 250px;
+    }
+
+    /* 4. Navegación */
+    nav {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth; /* Para que el scroll sea más elegante */
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start; /* Asegura que empiece desde la izquierda */
+        align-items: center;
+        gap: 12px;
+        padding: 10px 20px; /* Padding a los lados para que el primer botón no pegue al borde */
+        margin: 0;
+        list-style: none;
+        
+        /* SOLUCIÓN AL CORTE: */
+        min-width: max-content; /* Obliga al contenedor a medir lo que midan todos los botones juntos */
+    }
+
+    nav li {
+        display: inline-block; /* Importante para el scroll horizontal */
+    }
+
+    nav a {
+        display: inline-block;
+        white-space: nowrap; /* Evita que la palabra se rompa en dos filas */
+        padding: 8px 16px;
+        background-color: var(--panel-dark);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        font-size: 0.85rem;
+    }
+
+    /* Oculta la barra de scroll para que se vea más limpio */
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 5. Títulos */
+    h1 {
+        font-size: 1.8rem;
+        /* Reducimos un poco el tamaño para que no se corte */
+    }
+    nav a:active { 
+    border-color: var(--security-green); 
+    box-shadow: 0 0 10px var(--security-green);
+}
+    
+}
+nav a:active { 
+    border-color: var(--security-green); 
+    box-shadow: 0 0 10px var(--security-green);
+}
+/* --- NAVEGACIÓN FIJA (STICKY) --- */
+
+header {
+    /* Aseguramos que el header permita que el nav se "pegue" */
+    display: block; 
+    width: 100%;
+    background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
+    padding-top: 40px; /* Espacio para el nombre */
+    text-align: center;
+}
+
+/* --- ESTILO INDEPENDIENTE PARA EL NAV --- */
+nav {
+    position: -webkit-sticky; /* Soporte para Safari */
+    position: sticky;         /* El imán */
+    top: 0;                   /* Se pega arriba del todo */
+    z-index: 10000;           /* Un número muy alto para que nada lo tape */
+    
+    /* Fondo sólido indispensable (usa tu color de fondo) */
+    background-color: #0d1117; 
+    
+    width: 100vw;             /* Ocupa todo el ancho de la ventana */
+    margin-left: calc(-50vw + 50%); /* Centra el nav aunque el body sea flex */
+    
+    padding: 15px 0;
+    border-bottom: 2px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- AJUSTE PARA QUE EL MENÚ NO TAPE LOS TÍTULOS --- */
+/* Cuando haces clic en "Proyectos", este margen evita que el nav fijo tape el h2 */
+section {
+    scroll-margin-top: 80px; 
+}
+
+/* Asegura que el contenido principal siempre esté centrado */
+.container {
+    margin: 0 auto;
+    width: 95%;
+    max-width: 900px;
+}
+@media (max-width: 768px) {
+    section {
+        scroll-margin-top: 60px; /* Ajustado al nuevo tamaño del nav */
+    }
 }
