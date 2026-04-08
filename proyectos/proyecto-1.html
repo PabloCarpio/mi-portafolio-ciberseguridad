@@ -1,11 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro Profesional - Plataforma Segura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/proyecto-1.css">
 </head>
 <body>
-    <h1>proyecto 1</h1>
+    <div class="split-screen">
+        <div class="left-panel">
+            <div class="logo">
+                <img src="../img/svg/OGFB9T0.jpg" alt="Logo Empresa">
+            </div>
+            <div class="abstract-graphic">
+                <!-- Aquí podrías incluir un SVG o una imagen de fondo con un gráfico abstracto -->
+                <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="150" cy="150" r="140" stroke="#00c853" stroke-width="1" fill="none" opacity="0.1"/>
+                    <path d="M150 10 L200 70 L150 130 L100 70 L150 10 Z" fill="#00c853" opacity="0.05"/>
+                    <line x1="150" y1="10" x2="150" y2="130" stroke="#00c853" stroke-width="0.5" opacity="0.08"/>
+                    <line x1="10" y1="150" x2="290" y2="150" stroke="#00c853" stroke-width="0.5" opacity="0.08"/>
+                </svg>
+            </div>
+            <div class="testimonial">
+                <h3>"La plataforma líder en seguridad de red."</h3>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="form-container">
+                <h1>Crea tu cuenta profesional</h1>
+                <p class="subtitle">Empieza a gestionar tu infraestructura en minutos.</p>
+
+                <form id="registrationForm">
+                    <div class="input-group">
+                        <i class="fas fa-user icon"></i>
+                        <input type="text" id="fullName" placeholder="Nombre Completo" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-envelope icon"></i>
+                        <input type="email" id="email" placeholder="Correo Electrónico Laboral" required>
+                    </div>
+
+                    <div class="input-group password-group">
+                        <i class="fas fa-lock icon"></i>
+                        <input type="password" id="password" placeholder="Contraseña" required>
+                        <i class="fas fa-eye toggle-password icon"></i>
+                        <div class="password-strength-bar">
+                            <div class="strength-level"></div>
+                        </div>
+                    </div>
+
+                    <div class="terms-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">Acepto los <a href="#">Términos de Servicio</a> y la <a href="#">Política de Privacidad</a>.</label>
+                    </div>
+
+                    <button type="submit" class="cta-button">Registrarme ahora</button>
+                </form>
+
+                <div class="social-login">
+                    <p>O regístrate con:</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-google"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="login-link">
+                    <p>¿Ya tienes cuenta? <a href="#">Inicia sesión</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/proyecto-1.js"></script>
 </body>
 </html>

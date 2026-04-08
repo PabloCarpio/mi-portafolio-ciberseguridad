@@ -1,0 +1,313 @@
+/* style.css */
+
+:root {
+    --background-dark: #0a0f1e; /* Azul marino extremadamente oscuro */
+    --accent-primary: #00c853; /* Verde esmeralda sofisticado */
+    --text-primary: #f4f4f4; /* Blanco roto */
+    --text-secondary: #a0a0a0; /* Gris Medio */
+    --input-border-dark: #2a2d32; /* Gris oscuro sutil */
+    --input-border-focus: var(--accent-primary);
+    --validation-error: #ef5350; /* Rojo suave */
+    --validation-success: var(--accent-primary);
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Evita barras de scroll innecesarias */
+}
+
+.split-screen {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.left-panel {
+    flex: 1; /* Ocupa el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #101214; /* Gris casi negro elegante */
+    position: relative;
+    overflow: hidden;
+}
+
+.left-panel .logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 10;
+}
+
+.left-panel .logo img {
+    height: 40px; /* Ajusta el tamaño del logo si es necesario */
+}
+
+.left-panel .abstract-graphic {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.left-panel .abstract-graphic svg {
+    width: 350px; /* Ajusta el tamaño del gráfico */
+    height: 350px;
+}
+
+.left-panel .testimonial {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    text-align: left;
+    z-index: 10;
+}
+
+.left-panel .testimonial h3 {
+    font-size: 1.3em;
+    font-weight: 500;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.right-panel {
+    flex: 1.2; /* Ocupa un poco más de espacio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    position: relative;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px; /* Ancho máximo del formulario */
+    text-align: center;
+}
+
+.form-container h1 {
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.form-container .subtitle {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.input-group .icon {
+    position: absolute;
+    left: 15px;
+    color: var(--text-secondary);
+    font-size: 1.1em;
+    z-index: 2;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 15px 15px 50px; /* Espacio para el icono */
+    background-color: var(--background-dark);
+    border: 1px solid var(--input-border-dark);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: var(--text-secondary);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--input-border-focus);
+    box-shadow: 0 0 0 3px rgba(0, 200, 83, 0.2); /* Sutil sombra de foco */
+}
+
+.password-group {
+    position: relative;
+}
+
+.password-group .toggle-password {
+    position: absolute;
+    right: 15px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1em;
+    z-index: 2;
+}
+
+.password-strength-bar {
+    width: 100%;
+    height: 5px;
+    background-color: var(--input-border-dark);
+    border-radius: 3px;
+    margin-top: 5px;
+    overflow: hidden; /* Para que el relleno no se salga */
+}
+
+.password-strength-bar .strength-level {
+    height: 100%;
+    width: 0%; /* Inicialmente vacío */
+    background-color: transparent;
+    border-radius: 3px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.terms-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    text-align: left;
+    font-size: 0.9em;
+    color: var(--text-secondary);
+}
+
+.terms-group input[type="checkbox"] {
+    accent-color: var(--accent-primary); /* Color del checkbox */
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.terms-group label {
+    cursor: pointer;
+}
+
+.terms-group a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.terms-group a:hover {
+    color: var(--text-primary);
+}
+
+.cta-button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+}
+
+.cta-button:hover {
+    background-color: #00b048; /* Un tono ligeramente más oscuro para el hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);
+}
+
+.social-login {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+.social-login p {
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: var(--text-secondary);
+    font-size: 1.8em;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-primary);
+}
+
+.login-link {
+    margin-top: 20px;
+    font-size: 0.95em;
+    color: var(--text-secondary);
+}
+
+.login-link a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: var(--text-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .split-screen {
+        flex-direction: column;
+    }
+
+    .left-panel {
+        display: none; /* Ocultar el panel izquierdo en pantallas pequeñas */
+    }
+
+    .right-panel {
+        flex: 1;
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .form-container {
+        max-width: 100%;
+    }
+
+    .form-container h1 {
+        font-size: 1.8em;
+    }
+
+    .form-container .subtitle {
+        font-size: 1em;
+    }
+}
+
+/* Estilos para validación */
+input.invalid {
+    border-color: var(--validation-error) !important;
+}
+
+input.valid {
+    border-color: var(--validation-success) !important;
+}

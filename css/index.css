@@ -207,6 +207,7 @@ nav ul {
 
 /* La Tarjeta: El diseño individual */
 .tarjeta-proyecto {
+    position: relative;
     background-color: #161b22;
     /* Gris oscuro estilo GitHub */
     border: 1px solid #30363d;
@@ -567,4 +568,51 @@ section {
     section {
         scroll-margin-top: 60px; /* Ajustado al nuevo tamaño del nav */
     }
+}
+
+/* Contenedor principal: los alinea y centra */
+.social-icons-container {
+    display: flex;
+    justify-content: center; /* Centra los iconos horizontalmente */
+    align-items: center;
+    gap: 25px; /* Espacio uniforme entre iconos */
+    margin-top: 20px; /* Espacio arriba del contenedor */
+    padding: 10px;
+}
+
+/* Estilo base para el enlace (el <a>) */
+.social-icon {
+    text-decoration: none; /* Quita el subrayado */
+    color: #888888; /* Color gris suave por defecto (muy elegante) */
+    font-size: 1.8rem; /* Tamaño del icono (más grande que el texto) */
+    transition: all 0.3s ease; /* Transición suave para todos los efectos */
+}
+
+/* --- Efectos Hover (cuando pasas el ratón) --- */
+
+/* Efecto general al pasar el ratón */
+.social-icon:hover {
+    transform: translateY(-3px); /* Pequeño salto hacia arriba */
+}
+
+/* Efecto específico de color para GitHub */
+.social-icon[aria-label="GitHub"]:hover {
+    color: #00ff41; /* Verde Neón (tu color de acento de ciberseguridad) */
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5); /* Ligero brillo neón */
+}
+
+/* Efecto específico de color para LinkedIn */
+.social-icon[aria-label="LinkedIn"]:hover {
+    color: #00d4ff; /* Azul Eléctrico (tu color de acento de automatización) */
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5); /* Ligero brillo azul */
+}
+
+.tarjeta-proyecto a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Esto hace que cubra todo el recuadro */
 }

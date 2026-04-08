@@ -1,11 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Auditoría de Seguridad - Proyecto Profesional</title>
+    <link rel="stylesheet" href="../css/proyecto-2.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- Para iconos -->
 </head>
 <body>
-    <h1>proyecto 2</h1>
+
+    <header class="hero-header">
+        <div class="container">
+            <h1 class="project-title">Auditoría de Seguridad y Mitigación de Vulnerabilidades Web</h1>
+            <p class="project-subtitle">Explotación controlada de fallos críticos (XSS/SQLi) y endurecimiento de sistemas Linux.</p>
+            <div class="status-badge">Status: Secured</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="technologies-dashboard">
+            <h2>Tecnologías Utilizadas</h2>
+            <div class="tech-tags">
+                <span class="tech-tag"><i class="fab fa-linux"></i> Kali Linux</span>
+                <span class="tech-tag"><i class="fas fa-server"></i> Burp Suite</span>
+                <span class="tech-tag"><i class="fab fa-python"></i> Python Automation</span>
+                <span class="tech-tag"><i class="fas fa-shield-alt"></i> AlmaLinux</span>
+                <span class="tech-tag"><i class="fas fa-exclamation-triangle"></i> OWASP Top 10</span>
+            </div>
+        </section>
+
+        <section class="attack-scenario">
+            <h2>El Escenario de Ataque (The Kill Chain)</h2>
+            <p>
+                Simulación de una intrusión en una aplicación web empresarial. Identificación de vectores de ataque mediante técnicas de reconocimiento pasivo y activo. Se exploraron puntos débiles en la lógica de negocio y la validación de entradas para escalar privilegios y obtener acceso a datos sensibles.
+            </p>
+        </section>
+
+        <section class="technical-findings">
+            <h2>Hallazgos Técnicos</h2>
+            <div class="findings-grid">
+                <div class="finding-card">
+                    <div class="finding-header">
+                        <h3><i class="fas fa-code"></i> Cross-Site Scripting (XSS) Reflejado</h3>
+                    </div>
+                    <p>Ejecución de scripts maliciosos en el lado del cliente para robo de cookies de sesión, permitiendo el secuestro de cuentas y la suplantación de identidad.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-header">
+                        <h3><i class="fas fa-database"></i> Inyección SQL (SQLi)</h3>
+                    </div>
+                    <p>Bypass de autenticación mediante la manipulación de consultas SQL, logrando acceso no autorizado a la base de datos de usuarios y comprometiendo la integridad de los datos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="resolution-hardening">
+            <h2>Resolución y Hardening (El Valor Añadido)</h2>
+            <p>No solo atacamos, protegemos. Las siguientes medidas fueron implementadas para fortalecer la seguridad de la aplicación y el servidor:</p>
+            <ul class="hardening-list">
+                <li><i class="fas fa-check-circle neon-accent"></i> Implementación de <strong>Content Security Policy (CSP)</strong> para mitigar la ejecución de scripts no autorizados.</li>
+                <li><i class="fas fa-check-circle neon-accent"></i> <strong>Sanitización rigurosa de entradas</strong> en todos los formularios para prevenir inyecciones.</li>
+                <li><i class="fas fa-check-circle neon-accent"></i> Configuración robusta de <strong>Firewalld</strong> y cierre de puertos críticos (SSH, RDP, etc.) en el servidor Linux.</li>
+            </ul>
+        </section>
+
+        <section class="code-snippet-section">
+            <h2>Code Snippet: Ejemplo de Firewall Rules (AlmaLinux)</h2>
+            <pre><code class="language-bash"># Permitir tráfico web (HTTP/HTTPS)
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+
+# Permitir SSH (cambiar puerto si se ha modificado)
+sudo firewall-cmd --permanent --add-port=22/tcp
+
+# Bloquear todo lo demás por defecto (política implícita deny)
+sudo firewall-cmd --set-default-zone=drop
+
+# Recargar reglas
+sudo firewall-cmd --reload
+
+echo "Firewall configurado exitosamente."</code></pre>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 - Portfolio Profesional de Seguridad IT</p>
+    </footer>
+
+    <script src="../js/proyecto-2.js"></script>
 </body>
 </html>

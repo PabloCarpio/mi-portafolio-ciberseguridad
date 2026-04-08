@@ -1,63 +1,4 @@
-// const formulario = document.querySelector('#miFormulario');
-// const nombreInput = document.querySelector('#nombre');
-// const emailInput = document.querySelector('input[type="email"]');
-// const mensajeInput = document.querySelector('textarea');
-// const statusMensaje = document.querySelector('#status-mensaje');
 
-// function esEmailValido(email) {
-//     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//     return regexEmail.test(email);
-// }
-
-// function contieneCaracteresPeligrosos(texto) {
-//     const caracteresProhibidos = /[<>{}\[\]\\\/]/;
-//     return caracteresProhibidos.test(texto);
-// }
-
-// formulario.addEventListener('submit', function (event) {
-//     const nombreLimpio = nombreUsuario.replace(/[<>]/g, "");
-//     // alert("¡Acceso concedido, " + nombreLimpio + "!");
-//     event.preventDefault();
-//     let errores = [];
-//     const nombreUsuario = nombreInput.value.trim();
-//     const valorEmail = emailInput.value.trim();
-//     const valorMensaje = mensajeInput.value.trim();
-
-//     statusMensaje.textContent = "";
-//     statusMensaje.className = "";
-
-//     if (!esEmailValido(valorEmail)) {
-//         errores.push("- El formato del correo no es válido.");
-//     }
-
-//     if (contieneCaracteresPeligrosos(valorMensaje)) {
-//         errores.push("- Se detectaron caracteres prohibidos por seguridad.");
-//     }
-
-//     if (errores.length > 0) {
-//         alert("⚠️ BLOQUEO DE SEGURIDAD:\n\n" + errores.join("\n"));
-//         return;
-//     }
-
-//     statusMensaje.textContent = `¡Acceso concedido, ${nombreUsuario}! Tu mensaje ha sido enviado con éxito.`;
-//     statusMensaje.classList.add("mensaje-exito");
-
-//     formulario.reset();
-// });
-
-// const secciones = document.querySelectorAll('section');
-
-// secciones.forEach(seccion => {
-//     seccion.addEventListener('mouseenter', () => {
-//         seccion.style.borderColor = '#00ff41'; // Tu verde neón
-//         seccion.style.boxShadow = '0 0 15px rgba(0, 255, 65, 0.2)';
-//     });
-
-//     seccion.addEventListener('mouseleave', () => {
-//         seccion.style.borderColor = '#30363d';
-//         seccion.style.boxShadow = 'none';
-//     });
-// });
 
 // 1. Selección de elementos (Aseguramos que existan en el DOM)
 const formulario = document.querySelector('#miFormulario');
@@ -123,7 +64,7 @@ if (formulario) {
             const nombreLimpio = nombreUsuario.replace(/[<>]/g, "");
 
             if (statusMensaje) {
-                statusMensaje.textContent = `¡Acceso concedido, ${nombreLimpio}! Tu mensaje ha sido enviado con éxito.`;
+                statusMensaje.textContent = `¡Gracias ${nombreLimpio}! Tu mensaje ha sido enviado con éxito.`;
                 statusMensaje.classList.add("mensaje-exito");
                 statusMensaje.style.display = "block";
             } else {

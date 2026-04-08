@@ -1,0 +1,326 @@
+/* style.css */
+
+/* Paleta de Colores */
+:root {
+    --background-dark: #0a0a0a;
+    --background-gradient-end: #1a1a1a;
+    --neon-green: #00ff41;
+    --electric-blue: #00d4ff;
+    --text-light: #e0e0e0;
+    --text-gray: #888;
+    --card-background: #181818;
+    --border-color: rgba(0, 255, 65, 0.5); /* Borde semitransparente neón */
+}
+
+/* Fuentes */
+body {
+    font-family: 'JetBrains Mono', monospace; /* Fuente monoespaciada por defecto */
+    background-color: var(--background-dark);
+    background-image: radial-gradient(circle, var(--background-dark) 0%, var(--background-gradient-end) 100%);
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evitar scroll horizontal */
+}
+
+h1, h2, h3 {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 30px; }
+h3 { font-size: 1.5em; }
+
+a {
+    color: var(--electric-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-light);
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Header */
+.hero-header {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para que se vea el degradado */
+    padding: 80px 0;
+    text-align: center;
+    border-bottom: 3px solid var(--neon-green);
+}
+
+.project-title {
+    font-size: 3em;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green); /* Efecto glow */
+}
+
+.project-subtitle {
+    font-size: 1.3em;
+    color: var(--text-gray);
+    margin-bottom: 30px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid var(--neon-green);
+    border-radius: 5px;
+    background-color: rgba(0, 255, 65, 0.1); /* Fondo sutil neón */
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 0 8px var(--neon-green); /* Glow sutil */
+}
+
+/* Dashboard de Tecnologías */
+.technologies-dashboard {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--background-gradient-end);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.tech-tag {
+    background-color: rgba(0, 212, 255, 0.1); /* Fondo azul sutil */
+    color: var(--electric-blue);
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid var(--electric-blue);
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tech-tag:hover {
+    background-color: var(--electric-blue);
+    color: var(--background-dark);
+    box-shadow: 0 0 10px var(--electric-blue);
+}
+
+.tech-tag i {
+    margin-right: 8px;
+}
+
+/* Secciones Generales */
+section {
+    margin-top: 50px;
+    padding: 40px 0;
+}
+
+section p, section ul {
+    color: var(--text-gray);
+    font-size: 1.1em;
+}
+
+/* El Escenario de Ataque */
+.attack-scenario p {
+    max-width: 900px; /* Limitar ancho para mejor lectura */
+    margin: 0 auto;
+}
+
+/* Hallazgos Técnicos - Usando Grid */
+.technical-findings {
+    margin-top: 60px;
+}
+
+.findings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive Grid */
+    gap: 30px;
+}
+
+.finding-card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 30px;
+    border: 1px solid var(--background-gradient-end);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.finding-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 65, 0.2); /* Glow al pasar el ratón */
+}
+
+.finding-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    color: var(--neon-green);
+}
+
+.finding-header h3 {
+    margin-bottom: 0;
+    font-size: 1.3em;
+}
+
+.finding-header i {
+    font-size: 1.5em;
+}
+
+.finding-card p {
+    color: var(--text-light); /* Texto más claro dentro de las cards */
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+/* Resolución y Hardening */
+.resolution-hardening ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.resolution-hardening li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+}
+
+.resolution-hardening li i {
+    color: var(--neon-green);
+    margin-right: 15px;
+    font-size: 1.2em;
+}
+
+.resolution-hardening li strong {
+    color: var(--text-light);
+}
+
+/* Code Snippet */
+.code-snippet-section {
+    margin-top: 70px;
+    background-color: #000; /* Fondo negro puro para el snippet */
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    overflow-x: auto; /* Scroll si el código es muy largo */
+}
+
+.code-snippet-section h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--neon-green);
+}
+
+pre {
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+code {
+    display: block; /* Asegura que code ocupe todo el pre */
+    color: #9cdcfe; /* Color azul claro para el código */
+}
+
+code .keyword { color: #569cd6; } /* Ejemplo: palabras clave */
+code .string { color: #ce9178; } /* Ejemplo: strings */
+code .comment { color: #6a9955; } /* Ejemplo: comentarios */
+code .variable { color: #dcdcaa; } /* Ejemplo: variables */
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 60px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid var(--background-gradient-end);
+    font-size: 0.9em;
+    color: var(--text-gray);
+}
+
+/* Botones y Efectos de Glow */
+.neon-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: transparent;
+    color: var(--neon-green);
+    border: 2px solid var(--neon-green);
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px var(--neon-green); /* Glow inicial */
+}
+
+.neon-button:hover {
+    background-color: var(--neon-green);
+    color: var(--background-dark);
+    box-shadow: 0 0 15px var(--neon-green), 0 0 25px var(--neon-green); /* Glow más intenso */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-header {
+        padding: 60px 0;
+    }
+    .project-title {
+        font-size: 2.2em;
+    }
+    .project-subtitle {
+        font-size: 1.1em;
+    }
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.7em; }
+    h3 { font-size: 1.2em; }
+
+    .technologies-dashboard, .finding-card, .code-snippet-section {
+        padding: 20px;
+    }
+
+    .tech-tags {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .findings-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    pre {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-title {
+        font-size: 1.8em;
+    }
+    .project-subtitle {
+        font-size: 1em;
+    }
+    .status-badge {
+        font-size: 0.9em;
+    }
+    .neon-button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}

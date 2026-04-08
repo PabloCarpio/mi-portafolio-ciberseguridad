@@ -1,13 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NetAutomation Framework</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;700&family=Fira+Code:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../css/proyecto-3.css">
 </head>
 <body>
-    <h1>
-        proyecto 3
-    </h1>
+
+    <header>
+        <div class="container">
+            <h1>NetAutomation Framework: Gestión de Redes mediante Python</h1>
+            <h2>Automatización de despliegues OSPF, gestión de VLANs y auditoría de seguridad mediante scripts personalizados.</h2>
+        </div>
+    </header>
+
+    <section class="project-infographic">
+        <div class="container">
+            <img src="https://via.placeholder.com/800x400.png?text=Diagrama+Python+Router+Cisco" alt="Infografía del Proyecto">
+            <p style="margin-top: 20px; color: var(--gray);">Conexión de Script Python con Routers Cisco usando Netmiko/Napalm vía SSH, gestionando datos en formato JSON/YAML.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h3>Capacidades del Sistema</h3>
+            <div class="capabilities-grid">
+                <div class="capability-item">
+                    <h4>Despliegue Masivo</h4>
+                    <p>Configuración de múltiples switches en segundos sin error humano, garantizando consistencia en toda la infraestructura.</p>
+                </div>
+                <div class="capability-item">
+                    <h4>Auditoría de Cumplimiento</h4>
+                    <p>Scripts que revisan proactivamente si todos los routers cumplen con las políticas de seguridad y las ACLs activas.</p>
+                </div>
+                <div class="capability-item">
+                    <h4>Reportes Automáticos</h4>
+                    <p>Generación automática de archivos Excel o JSON detallando el estado de salud, rendimiento y configuraciones de la red.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h3>El Desafío Técnico</h3>
+            <div class="technical-challenge">
+                <div class="content">
+                    <h4>Problema: Configuración Manual Laberíntica</h4>
+                    <p>La configuración manual de redes complejas es tediosa, propensa a errores y extremadamente lenta. Cada cambio requiere acceso individual a cada dispositivo, aumentando el riesgo de inconsistencias y fallos de seguridad.</p>
+                    <h4>Solución: Automatización Inteligente</h4>
+                    <p>Mediante el uso de librerías de Python especializadas en redes como <span class="highlight">Netmiko</span> y <span class="highlight">Napalm</span>, se desarrolló un framework capaz de interactuar con dispositivos de red vía SSH. Esto redujo el tiempo de despliegue y configuración en un <span class="highlight">90%</span>, permitiendo enfocarse en tareas estratégicas en lugar de operativas repetitivas.</p>
+                </div>
+                <div class="code-canvas" id="codeCanvas">
+                    <div class="terminal-header">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                        <span>user@netautomation: ~</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line"><span class="prompt">~#</span> <span class="command">python deploy_ospf.py --routers all --area 0</span></div>
+                        <div class="terminal-line"><span class="output-info">[INFO] Conectando a Router_Carpio_01...</span></div>
+                        <div class="terminal-line"><span class="output-success">[SUCCESS] Router_Carpio_01: OSPF Neighbor established.</span></div>
+                        <div class="terminal-line"><span class="output-info">[INFO] Conectando a Core_Switch...</span></div>
+                        <div class="terminal-line"><span class="output-warning">[WARNING] Port 80 open on Core_Switch.</span></div>
+                        <div class="terminal-line"><span class="output-info">[INFO] Conectando a Router_Central_02...</span></div>
+                        <div class="terminal-line"><span class="output-success">[SUCCESS] Router_Central_02: OSPF Configuration applied.</span></div>
+                        <div class="terminal-line"><span class="prompt">~#</span> <span class="command"># Proceso completado exitosamente.</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-wow">
+        <div class="container">
+            <h3>¿Por qué este proyecto te garantiza el "Wow"?</h3>
+            <div class="points">
+                <div class="point-item">
+                    <h4>Te Separa del Resto</h4>
+                    <p>Mientras muchos estudiantes saben configurar un router en Packet Tracer, muy pocos dominan la habilidad de escribir código que automatice estas tareas, demostrando un nivel de maestría avanzado.</p>
+                </div>
+                <div class="point-item">
+                    <h4>Muestra Visión de Futuro</h4>
+                    <p>Estás apuntando directamente a roles de alta demanda como Network Engineer o DevSecOps, áreas cruciales en la infraestructura TI actual y con las mejores proyecciones salariales.</p>
+                </div>
+                <div class="point-item">
+                    <h4>Demuestra Uso de Datos y Cloud</h4>
+                    <p>Al manejar formatos como JSON o YAML para configuraciones, pruebas que entiendes los paradigmas modernos de redes, incluyendo Cloud Networking y la infraestructura como código.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 NetAutomation Framework. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/proyecto-3.js"></script>
 </body>
 </html>
